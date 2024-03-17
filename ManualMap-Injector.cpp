@@ -23,11 +23,7 @@ DWORD FindProcessId(const char* ProcessName) {
 	return PidList[PidList.size() - 1];
 }
 
-//typedef HMODULE(__stdcall* pLoadLibraryA)(LPCSTR);
-//typedef FARPROC(__stdcall* pGetProcAddress)(HMODULE, LPCSTR);
-
 typedef INT(__stdcall* dllmain)(HMODULE, DWORD, LPVOID);
-
 typedef struct
 {
 	LPVOID ImageBase;
@@ -119,7 +115,7 @@ DWORD __stdcall LibraryLoader(LPVOID Memory) {
 
 DWORD __stdcall stub() { return 0; }
 
-int main(int argc, char* argv[])
+int main()
 {
 	const char* targetProc = "cs2.exe";
 	DWORD ProcessId = FindProcessId(targetProc);
