@@ -1,1 +1,3 @@
 This prject is still not done, in the future i think i will add manual map instead of load library, it does not support complex dlls with exported functions and has no tls resolve, and instead of create thread i will switch to hooking an existing thread
+
+The process to use this injector is to have a basic dll and extract the hex data array i used HxD. 
